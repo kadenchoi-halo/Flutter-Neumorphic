@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
 class ToggleWidgetPage extends StatefulWidget {
-  ToggleWidgetPage({Key key}) : super(key: key);
+  ToggleWidgetPage({Key? key}) : super(key: key);
 
   @override
   createState() => _WidgetPageState();
@@ -272,8 +272,6 @@ NeumorphicToggle(
             ),
             onAnimationChangedFinished: (value) {
               if (value == 0) {
-                Scaffold.of(context)
-                    .showSnackBar(SnackBar(content: Text('on back !')));
                 print("onAnimationChangedFinished: $_selectedIndex");
               }
             },

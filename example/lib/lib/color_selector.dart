@@ -8,11 +8,15 @@ import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 class ColorSelector extends StatelessWidget {
   final Color color;
   final ValueChanged<Color> onColorChanged;
-  final double height;
+
   final double width;
+  final double height;
 
   const ColorSelector(
-      {this.height = 40, this.width = 40, this.color, this.onColorChanged});
+      {this.height = 40,
+      this.width = 40,
+      required this.color,
+      required this.onColorChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -44,12 +48,11 @@ class ColorSelector extends StatelessWidget {
               child: ColorPicker(
                 pickerColor: color,
                 onColorChanged: this.onColorChanged,
-                showLabel: true,
                 pickerAreaHeightPercent: 0.8,
               ),
             ),
             actions: <Widget>[
-              FlatButton(
+              TextButton(
                 child: const Text('Close'),
                 onPressed: () {
                   Navigator.of(context).pop();

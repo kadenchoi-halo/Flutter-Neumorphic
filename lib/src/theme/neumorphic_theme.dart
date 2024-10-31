@@ -65,7 +65,7 @@ class NeumorphicTheme extends StatefulWidget {
       return context
           .dependOnInheritedWidgetOfExactType<NeumorphicThemeInherited>();
     } catch (t) {
-      return null;
+      rethrow;
     }
   }
 

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Code extends StatelessWidget {
@@ -22,7 +21,7 @@ class Code extends StatelessWidget {
 class MyIntWidget extends StatefulWidget {
   final int value;
 
-  MyIntWidget({this.value});
+  MyIntWidget({required this.value});
 
   @override
   _MyIntWidgetState createState() => _MyIntWidgetState();
@@ -30,9 +29,9 @@ class MyIntWidget extends StatefulWidget {
 
 class _MyIntWidgetState extends State<MyIntWidget>
     with TickerProviderStateMixin {
-  int _value;
-  AnimationController _controller;
-  Animation<int> _valueAnimation;
+  late int _value;
+  late AnimationController _controller;
+  Animation<int>? _valueAnimation;
 
   @override
   void initState() {
@@ -49,7 +48,7 @@ class _MyIntWidgetState extends State<MyIntWidget>
       _valueAnimation =
           Tween(begin: _value, end: widget.value).animate(_controller)
             ..addListener(() {
-              _value = _valueAnimation.value;
+              _value = _valueAnimation?.value ?? 0;
             });
       _controller.forward();
     }

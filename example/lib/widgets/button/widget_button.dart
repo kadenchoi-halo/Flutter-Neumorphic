@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
 class ButtonWidgetPage extends StatefulWidget {
-  ButtonWidgetPage({Key key}) : super(key: key);
+  ButtonWidgetPage({Key? key}) : super(key: key);
 
   @override
   createState() => _WidgetPageState();
@@ -333,7 +333,7 @@ class _EnabledDisabledWidgetState extends State<_EnabledDisabledWidget> {
   }
 
   Widget _buildCode(BuildContext context) {
-    return Code("""    
+    return Code("""
 NeumorphicButton(
      isEnabled: false,
      child: Text("Second"),
